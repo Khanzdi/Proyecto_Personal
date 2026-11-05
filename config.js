@@ -5,8 +5,8 @@
   2. Sustituye los datos de demostración por información autorizada del negocio.
 */
 window.RESERVAFACIL_CONFIG = {
-  businessName: "Finca Los Llanos",
-  whatsappNumber: "573001234567", // REEMPLAZAR: número ficticio de demostración
+  businessName: "Finca Morelia",
+  whatsappNumber: "573117401014", // REEMPLAZAR: número ficticio de demostración
   location: "Villavicencio, Meta",
-  googleSheetsEndpoint: "" // Opcional: URL del despliegue de Google Apps Script
+  googleSheetsEndpoint: "https://script.google.com/macros/s/AKfycbxFLhJlOO5wWT6CAtmoEmM5qO8BaSRRxy9mgh8Umd_BkG2JvUjSLJ17TkHZzc9PZYTo/exec" // Opcional: URL del despliegue de Google Apps Script
 };
