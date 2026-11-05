@@ -46,19 +46,24 @@
       createdAt: new Date().toISOString()
     };
 
-    // Registro opcional en Google Sheets. Si no se configura endpoint, continúa con WhatsApp.
-    if (config.googleSheetsEndpoint) {
-      try {
-        await fetch(config.googleSheetsEndpoint, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-      } catch (error) {
-        console.warn("No fue posible enviar el registro a Sheets:", error);
-      }
-    }
+    // Registro en Google Sheets. 
+   if (config.googleSheetsEndpoint) {
+  try {
+    await fetch(config.googleSheetsEndpoint, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8"
+      },
+      body: JSON.stringify(payload)
+    });
+  } catch (error) {
+    console.warn(
+      "No fue posible enviar el registro a Sheets:",
+      error
+    );
+  }
+}
 
     const text = [
       `Hola, quiero cotizar una visita a ${payload.business}.`,
