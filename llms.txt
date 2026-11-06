@@ -1,0 +1,25 @@
+# ReservaFácil — demostración para fincas
+
+> Landing page estática (HTML, CSS y JavaScript sin dependencias) para que una finca de recreo en Villavicencio, Meta (Colombia) capte solicitudes de cotización. El formulario no confirma reservas ni consulta disponibilidad: arma un mensaje y abre WhatsApp para que el negocio confirme. Opcionalmente registra cada solicitud en Google Sheets mediante Google Apps Script. Los textos, el nombre y las fotografías son de demostración y no representan una finca real.
+
+Notas para asistentes de IA:
+- No hay backend ni paso de compilación. Se publica tal cual en GitHub Pages desde la rama `main`, carpeta raíz.
+- Los datos del negocio (nombre, número de WhatsApp, ubicación, endpoint de Sheets) viven solo en `config.js`, en el objeto `window.RESERVAFACIL_CONFIG`.
+- El número de WhatsApp debe llevar indicativo internacional y solo dígitos (formato colombiano: `57` + número).
+- Las imágenes de muestra vienen de `images.unsplash.com` y están referenciadas en `index.html` y `styles.css`.
+- No incluir contraseñas, claves privadas ni datos personales de clientes en el repositorio.
+
+## Documentación
+
+- [README](https://github.com/Khanzdi/Proyecto_Personal/blob/main/README.md): estructura, pasos previos a publicar, publicación en GitHub Pages, integración con Google Sheets y costos.
+
+## Código
+
+- [index.html](https://github.com/Khanzdi/Proyecto_Personal/blob/main/index.html): contenido y estructura. Secciones: inicio, la experiencia, espacios, galería, formulario de cotización (`#cotizar`) y pie de página.
+- [styles.css](https://github.com/Khanzdi/Proyecto_Personal/blob/main/styles.css): diseño responsive.
+- [config.js](https://github.com/Khanzdi/Proyecto_Personal/blob/main/config.js): datos del negocio y configuración (`businessName`, `whatsappNumber`, `location`, `googleSheetsEndpoint`).
+- [app.js](https://github.com/Khanzdi/Proyecto_Personal/blob/main/app.js): menú móvil, validación del formulario, botón flotante de WhatsApp, envío opcional a Sheets (`fetch` con `no-cors`) y apertura de `wa.me` con el mensaje armado.
+
+## Opcional
+
+- [google-apps-script.gs](https://github.com/Khanzdi/Proyecto_Personal/blob/main/google-apps-script.gs): script para desplegar como aplicación web y guardar cada solicitud como una fila en una hoja de cálculo. Hay que reemplazar `SPREADSHEET_ID`. Al usar `no-cors`, el navegador no puede verificar si la fila se guardó.
